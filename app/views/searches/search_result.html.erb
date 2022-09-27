@@ -13,10 +13,10 @@
   <% else %>
     <!--検索対象モデルがUserではない時(= 検索対象モデルがBookの時) -->
     <tbody>
-      <% @books.each do |book| %>
+      <% @osakes.each do |osake| %>
         <tr>
-          <td><%= book.title %></td>
-          <td><%= book.body %></td>
+          <td><%= osake.title %></td>
+          <td><%= osake.body %></td>
         </tr>
       <% end %>
     </tbody>

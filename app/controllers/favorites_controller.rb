@@ -1,15 +1,15 @@
 class FavoritesController < ApplicationController
   def create
-    book=Book.find(params[:book_id])
-    favorite =current_user.favorites.new(book_id: book.id)
+    osake=Osake.find(params[:osake_id])
+    favorite =current_user.favorites.new(osake_id: osake.id)
     favorite.save
-    redirect_to book_path(book)
+    redirect_to osake_path(osake)
   end
 
-  def destroy 
-    book=Book.find(params[:book_id])
-    favorite= current_user.favorites.find_by(book_id: book.id)
+  def destroy
+    osake=Osake.find(params[:osake_id])
+    favorite= current_user.favorites.find_by(osake_id: osake.id)
     favorite.destroy
-    redirect_to book_path(book)
+    redirect_to osake_path(osake)
   end
 end
