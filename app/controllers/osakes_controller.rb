@@ -13,6 +13,7 @@ class OsakesController < ApplicationController
 
   def create
     @osake = Osake.new(osake_params)
+    @osake.score = Language.get_data(osake_params[:body])  #この行を追加
     @osake.user_id = current_user.id
     if @osake.save
       redirect_to osake_path(@osake), notice: 'You have created osake successfully.'

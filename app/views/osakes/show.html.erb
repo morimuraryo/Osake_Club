@@ -17,6 +17,7 @@
           </td>
           <td><%= link_to @osake.title, @osake %></td>
           <td><%= @osake.body %></td>
+          <p class="sentiment-score">本文の感情分析スコア[<%= @osake.score %>]</p>
           <% if @osake.user==current_user %>
             <td><%= link_to 'Edit', edit_osake_path(@osake), class: "btn btn-sm btn-success" %></td>
             <td><%= link_to 'Destroy', osake_path(@osake), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger"%></td>

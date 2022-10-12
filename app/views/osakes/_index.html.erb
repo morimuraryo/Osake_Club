@@ -16,6 +16,7 @@
         </td>
         <td><%= link_to osake.title,osake %></td>
         <td><%= osake.body %></td>
+        <span class="sentiment-score">本文の感情分析スコア<%= osake.score %></span>
         <td>
           <%if osake.favorited_by?(current_user) %>
             <%= link_to osake_favorites_path(osake),method: :delete do %>
